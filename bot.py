@@ -4,6 +4,7 @@ import traceback
 import inspect
 import os
 from perchance.textgenerator import TextGenerator
+import time
 
 # ===================== CONFIG ===================== #
 
@@ -154,4 +155,8 @@ async def on_message(message: discord.Message):
 # ================= RUN ================= #
 
 if __name__ == "__main__":
-    client.run(TOKEN)
+    try:
+        client.run(TOKEN)
+    except Exception as e:
+        print(e)
+        time.sleep(10)
